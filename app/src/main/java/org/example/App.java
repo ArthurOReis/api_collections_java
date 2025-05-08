@@ -4,10 +4,11 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<String> listaCompras = new ArrayList<>();
+        List<String> listaCompras = new ArrayList<>();
 
         listaCompras.add("Pêra");
         listaCompras.add("Maçã");
@@ -18,16 +19,14 @@ public class App {
         for (int i = 0; i < listaCompras.size(); i++) {
             System.out.println("Produto "+(i+1)+": "+listaCompras.get(i));
         }
-
         System.out.println("Quantia total de produtos no carrinho: "+listaCompras.size());
     
         System.out.println("\nRemovendo primeira instância de 'Manga' do carrinho\n");
-        listaCompras.remove("Manga");
+        listaCompras = listaCompras.stream().distinct().toList();
 
         for (int i = 0; i < listaCompras.size(); i++) {
             System.out.println("Produto "+(i+1)+": "+listaCompras.get(i));
         }
-
         System.out.println("Quantia total de produtos no carrinho: "+listaCompras.size());
 
     }
