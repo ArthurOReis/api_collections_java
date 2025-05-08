@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCompras {
-    public void listaDeCompras(){
+    public void listaCompras(){
         List<String> listaCompras = new ArrayList<>();
 
         listaCompras.add("Pêra");

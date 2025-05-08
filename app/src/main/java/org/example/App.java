@@ -20,8 +20,8 @@ public class App {
 
             switch (valor) {
                 case 1 -> {
-                    ListaCompras l1 = new ListaCompras();
-                    l1.listaDeCompras();
+                    ListaCompras lc = new ListaCompras();
+                    lc.listaCompras();
                 }
 
                 case 2 -> {
