@@ -3,31 +3,45 @@
  */
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        List<String> listaCompras = new ArrayList<>();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.println("Selecione um teste de API Collections (1-5):");
+            System.out.println("1. Lista de Compras");
+            System.out.println("2. Conjunto de Alunos");
+            System.out.println("3. Fila de Notificações");
+            System.out.println("4. Estoque de Produtos");
+            System.out.println("5. Ranking de Palavras");
+            System.out.print("> ");
+            int valor = input.nextInt();
+            System.out.println("");
 
-        listaCompras.add("Pêra");
-        listaCompras.add("Maçã");
-        listaCompras.add("Manga");
-        listaCompras.add("Manga");
-        listaCompras.add("Bolo de cenoura");
+            switch (valor) {
+                case 1 -> {
+                    ListaCompras l1 = new ListaCompras();
+                    l1.listaDeCompras();
+                }
 
-        for (int i = 0; i < listaCompras.size(); i++) {
-            System.out.println("Produto "+(i+1)+": "+listaCompras.get(i));
+                case 2 -> {
+                    
+                }
+
+                case 3 -> {
+                    
+                }
+
+                case 4 -> {
+                    
+                }
+
+                case 5 -> {
+                    
+                }
+
+                default -> throw new AssertionError();
+            }
         }
-        System.out.println("Quantia total de produtos no carrinho: "+listaCompras.size());
-    
-        System.out.println("\nRemovendo primeira instância de 'Manga' do carrinho\n");
-        listaCompras = listaCompras.stream().distinct().toList();
-
-        for (int i = 0; i < listaCompras.size(); i++) {
-            System.out.println("Produto "+(i+1)+": "+listaCompras.get(i));
-        }
-        System.out.println("Quantia total de produtos no carrinho: "+listaCompras.size());
-
     }
 }
